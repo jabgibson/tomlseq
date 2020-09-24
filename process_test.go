@@ -24,7 +24,7 @@ func TestProcess(t *testing.T) {
 			want: []byte(tomlExpected1),
 		},
 	}
-		for _, tt := range tests {
+	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Process(tt.args.identifier, tt.args.data); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Process() = %s, want %s", string(got), string(tt.want))

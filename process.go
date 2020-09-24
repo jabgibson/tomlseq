@@ -46,7 +46,7 @@ func process(id string, bs []byte) []byte {
 		}
 
 		// flip commentTracker to true if a line comment is starting
-		if b == '#' && bs[i-1] == '\n'{
+		if b == '#' && bs[i-1] == '\n' {
 			commentTracker = true
 			rb = append(rb, b)
 			continue
