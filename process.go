@@ -1,6 +1,7 @@
 package tomlseq
 
 import (
+	"bytes"
 	"fmt"
 	"strconv"
 )
@@ -13,6 +14,7 @@ func Process(identifier string, data []byte) []byte {
 }
 
 func process(id string, bs []byte) []byte {
+	bs = bytes.Replace(bs, []byte("\r\n"), []byte("\n"), -1)
 	var rb []byte
 	var tableCount int
 	var mlsTracker bool
